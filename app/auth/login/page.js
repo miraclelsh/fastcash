@@ -26,11 +26,11 @@ export default function LoginPage () {
                 <p className="text-gray-400 text-center">Or Sign Up With</p>
                 <div className="flex justify-center gap-4">
                     <form>
-                        <button type="submit" className="w-[30px] h-[30px] border border-gray-300 cursor-pointer rounded-md"><FcGoogle className="text-4xl"/></button>
+                        <button type="submit" className="w-[40px] h-[40px] border border-gray-300 cursor-pointer rounded-md"><FcGoogle className="text-4xl"/></button>
                     </form>
 
                     <form>
-                        <button type="submit" className="w-[30px] h-[30px] border border-gray-300 cursor-pointer rounded-md"><FaGithub className="text-4xl"/></button>
+                        <button type="submit" className="w-[40px] h-[40px] border border-gray-300 cursor-pointer rounded-md"><FaGithub className="text-4xl"/></button>
                     </form>
                 </div>
 
