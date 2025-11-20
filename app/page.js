@@ -4,26 +4,6 @@ import { IconName, IoLocation, IoPersonSharp, IoSearch } from "react-icons/io5";
 export default function Home() {
   return (
     <main>
-      <div className="flex items-center justify-between px-3 bg-white">
-        <div className="text-[#3686f0] text-[37px] font-extrabold font-serif">FastCash</div>
-      
-      
-        <div className="flex gap-4">
-          <a href="#" className="font-bold text-[10px] hover:text-[#3686f0]">LOANS</a>
-          <a href="#" className="font-bold text-[10px] hover:text-[#3686f0]">CREDIT LIMIT</a>
-          <a href="#" className="font-bold text-[10px] hover:text-[#3686f0]">BUSINESS</a>
-          <a href="#" className="font-bold text-[10px] hover:text-[#3686f0]">REPAYMENT</a>
-          <a href="#" className="font-bold text-[10px] hover:text-[#3686f0]">ABOUT-US</a>
-          <a href="#" className="font-bold text-[10px] hover:text-[#3686f0]">LOCATIONS</a>
-        </div>
-
-      
-        <div className="flex items-center gap-2">
-          <a href="#" className="bg-[#3686f0] px-2 py-1 text-[10px] text-white font-bold">LOAN EXTENTIONS</a>
-          <button className="p-1"><IoPersonSharp className="w-4 h-4"/></button>
-          <button className="p-1"><IoSearch className="w-4 h-4"/></button>
-        </div>
-      </div>
       
       <div className="bg-[url('/happy-client.webp')] h-screen bg-no-repeat bg-[#3686f0] bg-right">
         <div className="py-38 px-30">
