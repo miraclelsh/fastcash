@@ -1,8 +1,9 @@
     "use client"
 import { db } from "@/config/firebase.config";
 import { collection, getDocs, query, where } from "firebase/firestore";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import Image from "next/image"
+import { redirect } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function MyProfile () {
@@ -29,6 +30,9 @@ export default function MyProfile () {
           }
           fetchProfile();
        },[session])
+       if (!session) {
+            redirect("/auth/login")
+       }
        
     return (
         <main className="min-h-screen flex justify-center py-5 md:py-6 md:px-12 lg:py-8 lg:px-16">
@@ -76,7 +80,11 @@ export default function MyProfile () {
                             <p className="text-gray-400">{profileData?.address}</p>
                         </div>
                     </div>
+                    <form>
+                    <button onClick={()=>{ signOut()}} type="submit" className="w-[300px] h-10 bg-red-600 text-white rounded-md shadow-md cursor-pointer">Logout</button>
+                </form>
                 </div>
+                
 
             </div>
 

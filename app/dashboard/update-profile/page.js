@@ -4,10 +4,10 @@ import { Button, CircularProgress, Dialog, DialogActions, DialogContent, DialogT
 import { addDoc, collection } from "firebase/firestore";
 import { useFormik } from "formik";
 import { useSession } from "next-auth/react";
+import Link from "next/link";
 import { useState } from "react";
 import * as yup from "yup";
-
-
+import { FaAngleDoubleRight } from "react-icons/fa";
 
 const schema = yup.object().shape({
     fullname: yup.string().required("fullName is reuired").min(5),
@@ -67,8 +67,8 @@ export default function UpdateProfile () {
 })
 
     return (
-        <main className="min-h-screen flex justify-center py-4 md:py-6 md:px-12 lg:px-16">
-            <div className="w-full md:w-[500px] h-[430px] rounded-md shadow-md px-4 py-6">
+        <main className="min-h-screen lg:flex lg:justify-center lg:gap-10 py-4 md:py-6 md:px-12 lg:py-8 lg:px-16">
+            <div className="w-full md:w-[500px] h-auto rounded-md shadow-md px-4 py-6">
                 <h1 className="text-2xl font-bold text-gray-800 text-center">Update your Profile</h1>
                 <form onSubmit={handleSubmit}
                 className="flex flex-col gap-3">
@@ -179,8 +179,14 @@ export default function UpdateProfile () {
                 </form>
 
             </div>
+            <Link href="/dashboard/get-loan ">
+                <div className="flex justify-center gap-3 hover:border-b hover:border-indigo-400">
+                    <p className="text-sm text-indigo-400">Proceed to get-Loan page</p>
+                    <FaAngleDoubleRight className="text-sm text-indigo-600 mt-1"/>
+                </div>
+            </Link>
             {/*success dialog */}
-            <Dialog open={open}>
+            <Dialog open={open} onClose={handleClose}>
                 <DialogTitle>Success</DialogTitle>
                 <DialogContent>
                     <Typography>Profile Updated Successfully</Typography>
